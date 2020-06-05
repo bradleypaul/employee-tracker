@@ -1,0 +1,27 @@
+{
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "description": "SQLite db project for demostrating CRUD operations about employees.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradleypaul/employee-tracker.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Paul Bradley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bradleypaul/employee-tracker/issues"
+  },
+  "homepage": "https://github.com/bradleypaul/employee-tracker#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^7.1.0",
+    "mysql2": "^2.1.0"
+  }
+}
