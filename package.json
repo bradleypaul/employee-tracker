@@ -1,7 +1,7 @@
 {
   "name": "employee-tracker",
   "version": "1.0.0",
-  "description": "SQLite db project for demostrating CRUD operations about employees.",
+  "description": "MySQL db project for demostrating CRUD operations about employees.",
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -21,7 +21,9 @@
   "homepage": "https://github.com/bradleypaul/employee-tracker#readme",
   "dependencies": {
     "console.table": "^0.10.0",
+    "dotenv": "^8.2.0",
     "inquirer": "^7.1.0",
+    "jest": "^26.0.1",
     "mysql2": "^2.1.0"
   }
 }
