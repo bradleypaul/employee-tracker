@@ -63,5 +63,17 @@ async function main() {
 main();
 
 function transformRole(role, departments) {
-    return [role.role, parseInt(role.salary), departments.filter(department => department.name === role.department )[0].id];
+    return [
+        role.role,
+        parseInt(role.salary),
+        departments.filter(department => department.name === role.department )[0].id
+    ];
+}
+
+function transformEmployee(employee, roles) {
+    return [
+        employee.firstName,
+        employee.lastName,
+        roles.filter(role => role.title === employee.title)[0].id
+    ];
 }
