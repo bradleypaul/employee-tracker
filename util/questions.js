@@ -48,6 +48,27 @@ function getRoleData(departments) {
     ]
 }
 
+function getEmployeeData(roles) {
+    return [
+        {
+            type: "input",
+            name: "firstName",
+            message: "What is the employee's first name?"
+        },
+        {
+            type: "input",
+            name: "lastName",
+            message: (ans) => `What is ${ans.firstName}'s last name?`
+        },
+        {
+            type: "list",
+            name: "department",
+            message: (ans) => `Which role does ${ans.firstName} ${ans.lastName} fill?`,
+            choices: roles
+        }
+    ]
+}
+
 module.exports.startingQuestion = startingQuestion;
 module.exports.getDepartmentData = getDepartmentData;
 module.exports.getRoleData = getRoleData;

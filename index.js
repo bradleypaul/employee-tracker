@@ -40,15 +40,24 @@ async function main() {
         const choices = departments.map(department => department.name);
         
         const role = await inquirer.prompt(questions.getRoleData(choices));
-        console.log(role);
         const roleArray = transformRole(role, departments);
         // role ok, change 
         // { role: 'HR Rep', salary: '34589', department: 'Human Resources' } => ['HR Rep', 34589, 4]
         // const [results] = await connection.execute(`insert into role (title, salary, department_id) values (?, ?, ?);`, roleArray);
     } else if (action === 'Add an employee') {
-        // prompt user for employee data
+        const [roles] = await connection.execute(`select title from roles`);
+        const choices = roles.map(role => role.title);
+        const employee = await inquirer.prompt(question.getEmployeeData());
+        // transform employee into an array
+        // then insert employee
         const [results] = await connection.execute(`insert into employee (first_name, last_name, role_id, manager_id) values ('Penis', 'Monster', 9, 4);`);
     }
+
+    // add functionality to update the role of an employee
+    // select all roles
+    // then update
+
+    // refactor this ball of garbage lol
 }
 
 main();
