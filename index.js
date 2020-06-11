@@ -14,8 +14,6 @@ function transformRole(role, departments) {
 }
 
 function transformEmployee(employee, roles, managers) {
-    console.log(employee);
-    console.log(managers);
     return [
         employee.firstName,
         employee.lastName,
@@ -73,13 +71,15 @@ function transformEmployee(employee, roles, managers) {
             const roleChoices = roles.map(role => role.title);
             const [managers] = await connection.execute(`select id, concat(first_name, ' ', last_name) as name from employee`);
             managers.push({ id: null, name: "None" });
-            console.log(managers);
             const managerChoices = managers.map(manager => manager.name);
             const employee = await inquirer.prompt(questions.getEmployeeData(roleChoices, managerChoices));
             const employeeArray = transformEmployee(employee, roles, managers);
             await connection.execute(`insert into employee (first_name, last_name, role_id, manager_id) values (?, ?, ?, ?);`, employeeArray);
 
         } else if (action === "Update an employee role") {
+            const [employees] = await connection.execute(`select id, concat(first_name, ' ', last_name) as name from employee`);
+            const employeeChoices = employees.map(employee => employee.name);
+        
             console.log("updating...")
         }
 
