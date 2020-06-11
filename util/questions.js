@@ -48,7 +48,7 @@ function getRoleData(departments) {
     ]
 }
 
-function getEmployeeData(roles) {
+function getEmployeeData(roles, managers) {
     return [
         {
             type: "input",
@@ -62,9 +62,27 @@ function getEmployeeData(roles) {
         },
         {
             type: "list",
-            name: "department",
+            name: "role",
             message: (ans) => `Which role does ${ans.firstName} ${ans.lastName} fill?`,
             choices: roles
+        }, {
+            type: "list",
+            name: "manager",
+            message: (ans) => `Who is ${ans.firstName} ${ans.lastName}'s manager?`,
+            choices: managers
+        }
+    ]
+}
+
+function done() {
+    return [
+        {
+            type: 'list',
+            name: 'continue',
+            choices: [
+                'yes',
+                'no'
+            ]
         }
     ]
 }
@@ -72,3 +90,5 @@ function getEmployeeData(roles) {
 module.exports.startingQuestion = startingQuestion;
 module.exports.getDepartmentData = getDepartmentData;
 module.exports.getRoleData = getRoleData;
+module.exports.getEmployeeData = getEmployeeData;
+module.exports.done = done;
