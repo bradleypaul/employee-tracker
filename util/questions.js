@@ -74,6 +74,23 @@ function getEmployeeData(roles, managers) {
     ]
 }
 
+function updateEmployee(employees, roles) {
+    return [
+        {
+            type: "list",
+            name: "name",
+            message: "Which employee would you like to update?",
+            choices: employees
+        },
+        {
+            type: "list",
+            name: "role",
+            message: (ans) => `Which role does ${ans.employee} fill?`,
+            choices: roles
+        }
+    ]
+}
+
 function done() {
     return [
         {
@@ -91,4 +108,5 @@ module.exports.startingQuestion = startingQuestion;
 module.exports.getDepartmentData = getDepartmentData;
 module.exports.getRoleData = getRoleData;
 module.exports.getEmployeeData = getEmployeeData;
+module.exports.updateEmployee = updateEmployee;
 module.exports.done = done;
