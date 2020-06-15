@@ -17,6 +17,7 @@ An inquirer/mysql project to easily change a database without having to write ra
   - [Contributing](#contributing)
   - [Tests](#tests)
   - [Contact](#contact)
+  - [Video demo](#video-demo)
 
 ## Installation
 
@@ -49,3 +50,6 @@ GitHub profile: [bradleypaul](https://github.com/bradleypaul)
 My email is: [bradleypauld@gmail.com](mailto:bradleypauld@gmail.com)
 
 Please do not contact me at this time.
+
+## Video demo
+https://drive.google.com/file/d/1nShCWmTJeCZKXAM2MDmme8WVwG7NbO5R/view
