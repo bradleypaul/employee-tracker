@@ -27,7 +27,7 @@ function transformEmployee(employee, roles, managers) {
     return [
         employee.firstName,
         employee.lastName,
-        db.getRoleId(employee.role, roles),
+        getRoleId(employee.role, roles),
         managers.filter(manager => manager.name === employee.manager)[0].id
     ];
 }

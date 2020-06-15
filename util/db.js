@@ -2,14 +2,12 @@
 
 const getEmployeesDetailed = async (connection) => {
     const [employees] = await connection.execute(
-        `with 
-            managers as (select id, first_name, last_name from employee)
-            select employee.id, employee.first_name, employee.last_name, role.title, role.salary,
-            department.name, concat(managers.first_name, ' ', managers.last_name) as manager
-            from employee
-            join role on employee.role_id = role.id
-            join department on role.department_id = department.id
-            left join managers on employee.manager_id = managers.id`
+        `select employee.id, employee.first_name, employee.last_name, role.title, role.salary,
+        department.name, concat(managers.first_name, ' ', managers.last_name) as manager
+        from employee
+        join role on employee.role_id = role.id
+        join department on role.department_id = department.id
+        left join (select id, first_name, last_name from employee) as managers on employee.manager_id = managers.id`
     );
     return employees;
 }
