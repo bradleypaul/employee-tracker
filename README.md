@@ -49,4 +49,3 @@ GitHub profile: [bradleypaul](https://github.com/bradleypaul)
 My email is: [bradleypauld@gmail.com](mailto:bradleypauld@gmail.com)
 
 Please do not contact me at this time.
-6
